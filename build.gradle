@@ -1,0 +1,31 @@
+subprojects {
+
+    group = 'org.gradle.sample'
+    version = '0.1.0-SNAPSHOT'
+
+    apply plugin: 'scala'
+    apply plugin: 'application'
+
+    repositories {
+        jcenter()
+        maven { url = 'http://packages.confluent.io/maven/' }
+    }
+
+    dependencies {
+        compile group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.3'
+
+        compile group: 'io.github.todokr', name: 'emojipolation_2.12', version: '0.2.0'
+
+        compile group: 'org.apache.kafka', name: 'kafka-clients', version: '2.0.0'
+        compile group: 'org.apache.kafka', name: 'kafka-streams', version: '2.0.0'
+        compile group: 'io.confluent', name: 'kafka-avro-serializer', version: '5.0.0'
+        compile group: 'io.confluent', name: 'kafka-streams-avro-serde', version: '5.0.0'
+    }
+
+    compileScala {
+        scalaCompileOptions.additionalParameters = [
+                '-Ywarn-unused-import',
+                '-Xmacro-settings:materialize-derivations'
+        ]
+    }
+}
