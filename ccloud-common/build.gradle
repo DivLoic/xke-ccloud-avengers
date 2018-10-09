@@ -1,0 +1,11 @@
+plugins { id 'com.commercehub.gradle.plugin.avro' version '0.15.1' }
+
+apply plugin: 'com.commercehub.gradle.plugin.avro'
+
+dependencies {
+
+    compile 'org.scala-lang:scala-library:2.12.7'
+    testCompile 'org.scalatest:scalatest_2.12:3.2.0'
+
+    compile group: 'org.apache.avro', name: 'avro', version: '1.8.2'
+}

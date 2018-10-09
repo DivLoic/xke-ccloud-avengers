@@ -1,0 +1,25 @@
+plugins{ id 'com.palantir.docker' version '0.20.1' }
+
+apply plugin: 'com.palantir.docker'
+
+mainClassName = 'fr.xebia.ldi.game.Main'
+
+docker {
+    tags version
+    name 'gcr.io/cloud-fighter-101/ccloud-games'
+    files tasks.distTar.outputs, 'src/main/resources/docker/'
+    dockerfile file('src/main/resources/docker/Dockerfile')
+}
+
+dependencies {
+    compile project(':ccloud-common')
+
+    compile 'org.scala-lang:scala-library:2.12.7'
+    testCompile 'org.scalatest:scalatest_2.12:3.2.0'
+
+    compile group: 'org.scalacheck', name: 'scalacheck_2.12', version: '1.14.0'
+    compile group: 'com.typesafe.akka', name: 'akka-http_2.12', version: '10.1.5'
+    compile group: 'com.typesafe.akka', name: 'akka-stream-kafka_2.12', version: '0.22'
+
+    compile group: 'org.scalanlp', name: 'breeze_2.12', version: '0.13.2'
+}
