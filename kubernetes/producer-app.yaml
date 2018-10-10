@@ -1,0 +1,39 @@
+---
+# producer application
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: ccloud-heroes-shifumi
+  namespace: default
+  labels:
+    app: ccloud-heroes-shifumi
+spec:
+  selector:
+    matchLabels:
+      app: ccloud-heroes-shifumi
+  template:
+    metadata:
+      labels:
+        app: ccloud-heroes-shifumi
+    spec:
+      containers:
+      - name: heroes-shifumi-producer
+        image: gcr.io/cloud-fighter-101/ccloud-games:latest
+        env:
+        - name: API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: confluent-secrets
+              key: api-key
+        - name: SECRET_KEY
+          valueFrom:
+            secretKeyRef:
+              name: confluent-secrets
+              key: secret-key
+        - name: KAFKA_BROKERS
+          valueFrom:
+            secretKeyRef:
+              name: confluent-secrets
+              key: bootstrap-servers
+        - name: SCHEMA_REGISTRY
+          value: http://schema-registry-service:80
