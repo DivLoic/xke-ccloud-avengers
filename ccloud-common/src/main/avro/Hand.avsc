@@ -1,0 +1,19 @@
+{
+  "type": "record",
+  "name": "Hand",
+  "namespace": "fr.xebia.ldi.common.schema",
+  "fields": [
+    {
+      "name": "id",
+      "type": "string"
+    },
+    {
+      "name": "character",
+      "type": "string"
+    },
+    {
+      "name": "hit",
+      "type": "string"
+    }
+  ]
+}

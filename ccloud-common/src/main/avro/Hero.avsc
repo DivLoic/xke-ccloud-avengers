@@ -1,0 +1,27 @@
+{
+  "type": "record",
+  "name": "Hero",
+  "namespace": "fr.xebia.ldi.common.schema",
+  "fields": [
+    {
+      "name": "name",
+      "type": "string"
+    },
+    {
+      "name": "fullName",
+      "type": ["null", "string"]
+    },
+    {
+      "name": "creation",
+      "type": "int"
+    },
+    {
+      "name": "comic",
+      "type": "string"
+    },
+    {
+      "name": "hit",
+      "type": ["null", "string"]
+    }
+  ]
+}
