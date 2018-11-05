@@ -19,13 +19,12 @@ object Hero {
     hit = Option(c.getHit)
   )
 
-  val Wolverine = Hero("wolverine", Some("Logan"), 1930, "X-MEN", Some("F"))
-  val SpiderMan = Hero("spider-man", Some("Logan"), 1930, "X-MEN", Some("F"))
-  val IronMan = Hero("iron-man", Some("Logan"), 1930, "X-MEN", Some("F"))
-  val AntMan = Hero("ant-man", Some("Logan"), 1930, "X-MEN", Some("F"))
-
-  val Captain = Hero("captain-america", Some("Steven Rogers"), 1960, "", Some(""))
-  val Hawkeye = Hero("Hawkeye", Some("Clinton Francis"), 1960, "", Some(""))
+  val Wolverine = Hero("wolverine", Some("Logan"), 1930, "X-MEN", None)
+  val SpiderMan = Hero("spider-man", Some("Logan"), 1930, "X-MEN", None)
+  val IronMan = Hero("iron-man", Some("Logan"), 1930, "X-MEN", None)
+  val AntMan = Hero("ant-man", Some("Logan"), 1930, "X-MEN", None)
+  val Captain = Hero("captain-america", Some("Steven Rogers"), 1960, "", None)
+  val Hawkeye = Hero("Hawkeye", Some("Clinton Francis"), 1960, "", None)
 
 /*  Recrues des Années 1960
   Œil-de-Faucon (Hawkeye) / Clinton Francis « Clint » Barton
